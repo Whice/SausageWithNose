@@ -19,11 +19,21 @@ public class GameStartup : MonoBehaviour
         this.systems.ConvertScene();
 
         this.systems
+            //init
             .Add(new PlayerInitSystem())
+            .Add(new LootStackInitSystem())
+            .Add(new LootGeneratorInitSystem())
+
+            //run
             .Add(new PlayerJoystickManagmentSystem())
+            .Add(new GenerateLootToStackSystem())
+
+            //inject
             .Inject(this.configuration)
             .Inject(this.sceneData)
             .Inject(runtimeData)
+
+            //init
             .Init(); 
     }
 

@@ -1,7 +1,15 @@
+using System;
 using UnityEngine;
 
-[CreateAssetMenu
-    ]
+[CreateAssetMenu]
 public class StaticData : ScriptableObject
 {
+    /// <summary>
+    /// Максимальный размер стека.
+    /// </summary>
+    public Int32 maxStackCapasity;
+    /// <summary>
+    /// Время, раз в которое генерируется новый объект.
+    /// </summary>
+    public float generateTime;
 }
