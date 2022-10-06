@@ -6,7 +6,16 @@ using UnityEngine;
 public struct LootStackComponent
 {
     private Int32 lastIndex;
-    private NativeArray<Int32> lootComponents;
+    public Int32 GetLastIndex() => this.lastIndex;
+    private Int32 capasityPrivate;
+    public Int32 capasity => this.capasityPrivate;
+
+    /// <summary>
+    /// Массив компонентов лута.
+    /// <br/>Не подлежит изменению извне, только для чтения!
+    /// </summary>
+    public NativeArray<Int32> lootComponents;
+
     /// <summary>
     /// Стэк полон.
     /// </summary>
@@ -15,6 +24,7 @@ public struct LootStackComponent
     {
         this.lootComponents = new NativeArray<Int32>(maxStackCapasity, Allocator.Persistent);
         this.lastIndex = -1;
+        this.capasityPrivate = maxStackCapasity;
     }
     public bool TryPop(Int32 component)
     {
@@ -33,19 +43,9 @@ public struct LootStackComponent
         {
             ++this.lastIndex;
             this.lootComponents[this.lastIndex] = component;
-            Print();
         }
 
         return false;
-    }
-    private void Print()
-    {
-        string s = "Last index = " + this.lastIndex.ToString() + "\n";
-        for(int i=0;i<=this.lastIndex;i++)
-        {
-            s += this.lootComponents[i].ToString() + "; ";
-        }
-        Debug.Log(s);
     }
 }
 

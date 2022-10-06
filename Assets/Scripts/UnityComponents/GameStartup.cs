@@ -23,10 +23,12 @@ public class GameStartup : MonoBehaviour
             .Add(new PlayerInitSystem())
             .Add(new LootStackInitSystem())
             .Add(new LootGeneratorInitSystem())
+            .Add(new UIStackInitSystem())
 
             //run
             .Add(new PlayerJoystickManagmentSystem())
             .Add(new GenerateLootToStackSystem())
+            .Add(new UIStackrunSystem())
 
             //inject
             .Inject(this.configuration)
