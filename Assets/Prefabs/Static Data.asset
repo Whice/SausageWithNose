@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Static Data
   m_EditorClassIdentifier: 
   maxStackCapasity: 5
-  generateTime: 1
+  generateTime: 2
+  material0: {fileID: 2100000, guid: 8a0a7c145e703fa46aacce0256615b48, type: 2}
+  material1: {fileID: 2100000, guid: 5bd33d90d3f2a6a4c8ca3b43d24606e4, type: 2}
+  material2: {fileID: 2100000, guid: 28a9dbe888793a74d8ffb616f207c2bc, type: 2}

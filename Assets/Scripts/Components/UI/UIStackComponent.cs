@@ -51,15 +51,19 @@ public struct UIStackComponent
                 }
         }
         item.transform.SetParent(this.parentTransform, false);
+        item.SetActive(true);
         this.visibleLootItems.Push(item);
     }
     public void ClearUI()
     {
         if (this.visibleLootItems == null)
             this.visibleLootItems = new Stack<GameObject>();
+        GameObject lootItem = null;
         while (this.visibleLootItems.Count != 0)
         {
-            this.pool.Push(this.visibleLootItems.Pop());
+            lootItem = this.visibleLootItems.Pop();
+            lootItem.SetActive(false);
+            this.pool.Push(lootItem);
         }
     }
 }

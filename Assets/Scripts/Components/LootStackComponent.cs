@@ -26,11 +26,11 @@ public struct LootStackComponent
         this.lastIndex = -1;
         this.capasityPrivate = maxStackCapasity;
     }
-    public bool TryPop(Int32 component)
+    public bool TryPop(ref Int32 componentType)
     {
         if(this.lastIndex!=-1)
         {
-            component = this.lootComponents[this.lastIndex];
+            componentType = this.lootComponents[this.lastIndex];
             --this.lastIndex;
             return true;
         }
@@ -46,6 +46,11 @@ public struct LootStackComponent
         }
 
         return false;
+    }
+
+    public void Destroy()
+    {
+        this.lootComponents.Dispose();
     }
 }
 

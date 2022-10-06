@@ -14,7 +14,7 @@ public class GameStartup : MonoBehaviour
     {
         this.ecsWorld = new EcsWorld();
         this.systems = new EcsSystems(this.ecsWorld); 
-        RuntimeData runtimeData = new RuntimeData();
+        RuntimeData runtimeData = new RuntimeData(this.sceneData, this.configuration);
 
         this.systems.ConvertScene();
 
@@ -29,6 +29,10 @@ public class GameStartup : MonoBehaviour
             .Add(new PlayerJoystickManagmentSystem())
             .Add(new GenerateLootToStackSystem())
             .Add(new UIStackrunSystem())
+            .Add(new PlayerDropViewSystem())
+
+            //destroy
+            .Add(new DestroyLootStackSystem())
 
             //inject
             .Inject(this.configuration)

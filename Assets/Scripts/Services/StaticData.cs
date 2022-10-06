@@ -12,4 +12,7 @@ public class StaticData : ScriptableObject
     /// Время, раз в которое генерируется новый объект.
     /// </summary>
     public float generateTime;
+    public Material material0;
+    public Material material1;
+    public Material material2;
 }
