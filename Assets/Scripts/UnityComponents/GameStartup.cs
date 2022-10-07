@@ -9,18 +9,17 @@ public class GameStartup : MonoBehaviour
 
     private EcsWorld ecsWorld;
     private EcsSystems systems;
-
     void Start()
     {
         this.ecsWorld = new EcsWorld();
-        this.systems = new EcsSystems(this.ecsWorld); 
+        this.systems = new EcsSystems(this.ecsWorld);
+        this.sceneData.Init(this.ecsWorld);
         RuntimeData runtimeData = new RuntimeData(this.sceneData, this.configuration);
 
         this.systems.ConvertScene();
 
         this.systems
             //init
-            .Add(new PlayerInitSystem())
             .Add(new LootStackInitSystem())
             .Add(new LootGeneratorInitSystem())
             .Add(new UIStackInitSystem())
@@ -30,6 +29,7 @@ public class GameStartup : MonoBehaviour
             .Add(new GenerateLootToStackSystem())
             .Add(new UIStackrunSystem())
             .Add(new PlayerDropViewSystem())
+            .Add(new CollisionManagementSystem())
 
             //destroy
             .Add(new DestroyLootStackSystem())
@@ -40,7 +40,7 @@ public class GameStartup : MonoBehaviour
             .Inject(runtimeData)
 
             //init
-            .Init(); 
+            .Init();
     }
 
     void Update()

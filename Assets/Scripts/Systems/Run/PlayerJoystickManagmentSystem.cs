@@ -14,14 +14,11 @@ public class PlayerJoystickManagmentSystem : IEcsRunSystem
             foreach (var i in this.filter)
             {
                 ref PlayerComponent component = ref this.filter.Get1(i);
-                if (component.transform != null)
-                {
-                    speed = component.speed;
+                speed = component.speed;
 
-                    Vector3 direction = new Vector3(joystick.Horizontal * speed, 0, joystick.Vertical * speed);
-                    component.transform.rotation = Quaternion.LookRotation(direction);
-                    component.transform.localPosition += direction * Time.deltaTime;
-                }
+                Vector3 direction = new Vector3(joystick.Horizontal * speed, 0, joystick.Vertical * speed);
+                component.transform.rotation = Quaternion.LookRotation(direction);
+                component.transform.localPosition += direction * Time.deltaTime;
             }
         }
     }

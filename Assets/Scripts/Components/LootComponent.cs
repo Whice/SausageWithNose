@@ -1,6 +1,7 @@
 ﻿using System;
+using UnityEngine;
 
-
+[Serializable]
 public struct LootComponent
 {
     /// <summary>
@@ -10,4 +11,8 @@ public struct LootComponent
     /// <br/>2 - синий.
     /// </summary>
     public Int32 type;
+    /// <summary>
+    /// Игровой объект этого компонента.
+    /// </summary>
+    public GameObject gameObject;
 }

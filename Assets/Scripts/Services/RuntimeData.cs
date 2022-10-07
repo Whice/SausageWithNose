@@ -45,11 +45,13 @@ public class RuntimeData
                     break;
                 }
         }
+        view.SetActive(true);
 
         return view;
     }
     public void PushLootItemView(GameObject lootItemView)
     {
+        lootItemView.SetActive(false);
         this.lootItemViewPool.Push(lootItemView);
     }
 }

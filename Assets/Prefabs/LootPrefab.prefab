@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 124490474740829434}
   - component: {fileID: 3297499420595392086}
   - component: {fileID: 6410787623728716184}
-  - component: {fileID: 8626155323939501454}
+  - component: {fileID: 1366685497108617433}
   - component: {fileID: 4098619087031035847}
+  - component: {fileID: 7383274323233650485}
+  - component: {fileID: 3590735252308052718}
   m_Layer: 0
   m_Name: LootPrefab
   m_TagString: Untagged
@@ -85,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8626155323939501454
+--- !u!65 &1366685497108617433
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +98,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.15, y: 1.23, z: 1.48}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4098619087031035847
 Rigidbody:
@@ -111,6 +113,34 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7383274323233650485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834138794310197623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863c7f7460b2b49abb4fa9a7ff9cb180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  convertMode: 0
+--- !u!114 &3590735252308052718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834138794310197623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4497480255bc445bbf3e92f73b0c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value:
+    type: 0
+    gameObject: {fileID: 4834138794310197623}

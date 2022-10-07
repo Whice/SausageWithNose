@@ -520,9 +520,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystickPrivate: {fileID: 505888322}
+  playerCollisionDetector: {fileID: 7884365660992944948}
   lootItemViewTemplatePrivate: {fileID: 4834138794310197623, guid: 78ee2f0c3e668b3469e519cbaeaff1a0, type: 3}
-  containerForDrop: {fileID: 0}
-  delayForDrop: 0.5
+  containerForDrop: {fileID: 924218780}
+  delayForDrop: 0.1
 --- !u!114 &375978533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,6 +555,7 @@ Transform:
   - {fileID: 1610165311}
   - {fileID: 705507995}
   - {fileID: 1243113036}
+  - {fileID: 924218780}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -770,6 +772,37 @@ Transform:
   m_Father: {fileID: 375978534}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &924218779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 924218780}
+  m_Layer: 0
+  m_Name: LootContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &924218780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924218779}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.2995157, y: 0.9871974, z: 11.226626}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 375978534}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &993580953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1157,7 +1190,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3226555363463463520, guid: 9fcea0abb653af94191e8c0a0a8180dc, type: 3}
       propertyPath: convertMode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3571960847458432362, guid: 9fcea0abb653af94191e8c0a0a8180dc, type: 3}
       propertyPath: m_RootOrder
@@ -1209,3 +1242,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fcea0abb653af94191e8c0a0a8180dc, type: 3}
+--- !u!114 &7884365660992944948 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7300406089413241499, guid: 9fcea0abb653af94191e8c0a0a8180dc, type: 3}
+  m_PrefabInstance: {fileID: 7884365660992944947}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195620320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe02950cbc1937d4cb2cdaf264d87b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

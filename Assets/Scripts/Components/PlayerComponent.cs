@@ -9,4 +9,6 @@ public struct PlayerComponent
     /// </summary>
     public float speed;
     public Transform transform;
+    public GameObject gameObject;
+    public CollisionDetector playerCollisionDetector;
 }
